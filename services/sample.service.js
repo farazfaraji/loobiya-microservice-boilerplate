@@ -1,16 +1,16 @@
-async function insertIntoSample(data) {
-    const reportsModel = ((this.postgres || {}).models || {}).reports || null;
+const di = require("./../di");
+
+async function insertIntoSample(username,email) {
+    const reportsModel = ((di.postgres || {}).models || {}).sample || null;
     if (reportsModel) {
-        await reportsModel.create({
-            team_id: teamId,
-            team_domain: teamDomain,
-            channel_name: channelName,
-            user_id: userId,
+        return await reportsModel.create({
             username,
-            running_score: runningScore,
-            biking_score: bikingScore,
+            email
         });
-        return await this.getLeaderBoardByUsername(username)
     }
     return false;
+}
+
+module.exports = {
+    insertIntoSample
 }
