@@ -1,0 +1,25 @@
+version: "3.3"
+services:
+
+  pgadmin:
+    image: dpage/pgadmin4:4.25
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@example.com
+      PGADMIN_DEFAULT_PASSWORD: password
+    ports:
+      - "${PG_ADMIN_PORT}:80"
+    volumes:
+      - ./assets/docker/pgadmindata:/var/lib/pgadmin
+
+  postgres:
+    container_name: "${APP_NAME}_postgres"
+    image: postgres
+    environment:
+      POSTGRES_USER: "${DB_USERNAME}"
+      POSTGRES_PASSWORD: "${DB_PASSWORD}"
+      PGDATA: /data/postgres
+    volumes:
+      - ./assets/docker/postgres:/data/postgres
+    ports:
+      - "${DB_PORT}:5432"
+    restart: unless-stopped
