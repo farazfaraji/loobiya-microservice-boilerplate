@@ -4,24 +4,24 @@ module.exports = (sequelize) => {
     sequelize.define('sample',
         {
             sample_id: {
-                type: Sequelize.INTEGER,
+                type: DataTypes.INTEGER,
                 autoIncrement: true,
                 primaryKey: true,
             },
             username: {
-                type: Sequelize.STRING
+                type: DataTypes.STRING
             },
             password: {
-                type: Sequelize.STRING
+                type: DataTypes.STRING
             },
             email: {
-                type: Sequelize.STRING
+                type: DataTypes.STRING
             },
             createdAt: {
-                type: Sequelize.DATE
+                type: DataTypes.DATE
             },
             updatedAt: {
-                type: Sequelize.DATE
+                type: DataTypes.DATE
             },
         }
     );
