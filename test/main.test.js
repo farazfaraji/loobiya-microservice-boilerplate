@@ -29,7 +29,7 @@ describe('Test Business Layer', () => {
 
     it('insert first sample', async () => {
         const res = await sampleService.insertIntoSample("faraz","faraz.faraji@gmail.com");
-        expect(res.data).toBe(10);
+        expect(res.data).toBe.not(false);
     });
 
     it('check data', async () => {
@@ -38,7 +38,7 @@ describe('Test Business Layer', () => {
     });
 
     it('clear database', async () => {
-        const res = await di.postgres.clearTable();
+        const res = await di.postgres.clearTable('sample');
         expect(res).toBe(true);
     });
 })
