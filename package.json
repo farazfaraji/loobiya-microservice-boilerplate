@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --silent=true",
+    "start": "node ./bin/www"
   },
   "author": "faraz faraji",
   "license": "ISC",
