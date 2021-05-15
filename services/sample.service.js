@@ -11,6 +11,15 @@ async function insertIntoSample(username,email) {
     return false;
 }
 
+async function getAllData() {
+    const reportsModel = ((di.postgres || {}).models || {}).sample || null;
+    if (reportsModel) {
+        return await reportsModel.findAll({where:{}});
+    }
+    return false;
+}
+
 module.exports = {
-    insertIntoSample
+    insertIntoSample,
+    getAllData
 }
