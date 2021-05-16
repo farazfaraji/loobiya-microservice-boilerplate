@@ -29,7 +29,7 @@ describe('Test Business Layer', () => {
 
     it('insert first sample', async () => {
         const res = await sampleService.insertIntoSample("faraz","faraz.faraji@gmail.com");
-        expect(res.data).toBe.not(false);
+        expect(res.data).not.toBe(false);
     });
 
     it('check data', async () => {
