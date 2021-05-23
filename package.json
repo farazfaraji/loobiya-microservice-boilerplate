@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --silent=true",
-    "start": "node ./bin/www"
+    "start": "node bin/www.js"
   },
   "author": "faraz faraji",
   "license": "ISC",
