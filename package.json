@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --silent=true",
+    "start": "node bin/www.js"
   },
   "author": "faraz faraji",
   "license": "ISC",
@@ -15,7 +16,10 @@
     "express": "^4.17.1",
     "express-validator": "^6.10.1",
     "http": "0.0.1-security",
+    "jest": "^26.6.3",
     "morgan": "^1.10.0",
+    "pg": "^8.6.0",
+    "pg-hstore": "^2.3.3",
     "sequelize": "^6.6.2"
   }
 }

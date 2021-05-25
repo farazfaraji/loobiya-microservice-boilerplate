@@ -61,9 +61,9 @@ class Postgres {
      * clear the table
      * @returns {Promise<boolean>}
      */
-    async clearTable(){
+    async clearTable(tableName){
         try{
-            await this.postgres.models.reports.destroy({where:{}});
+            await this.postgres.models[tableName].destroy({where:{}});
             return true;
         }catch (e){
             console.error(e);
